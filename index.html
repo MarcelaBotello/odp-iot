@@ -3,436 +3,505 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>ODP IoT - Plataforma Educativa</title>
+<title>ODP IoT | Plataforma educativa</title>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
 <style>
+:root{
+  --azul:#1f4fb2;
+  --azul2:#0f2f66;
+  --celeste:#eaf3ff;
+  --verde:#16a34a;
+  --rojo:#dc2626;
+  --naranja:#f97316;
+  --gris:#f4f6f8;
+  --texto:#263238;
+}
+*{box-sizing:border-box}
+body{
+  margin:0;
+  font-family:Arial, Helvetica, sans-serif;
+  background:var(--gris);
+  color:var(--texto);
+}
+.layout{
+  display:grid;
+  grid-template-columns:260px 1fr;
+  min-height:100vh;
+}
+aside{
+  background:linear-gradient(180deg,#071c33,#0f2f66);
+  color:white;
+  padding:24px 18px;
+  position:sticky;
+  top:0;
+  height:100vh;
+}
+aside h2{margin-top:0}
+aside p{font-size:.9rem;line-height:1.5}
+aside a{
+  display:block;
+  color:white;
+  text-decoration:none;
+  padding:10px 12px;
+  border-radius:8px;
+  margin:5px 0;
+}
+aside a:hover{background:rgba(255,255,255,.15)}
+main{
+  padding:28px;
+  max-width:1200px;
+}
+.hero{
+  background:linear-gradient(135deg,#0f2f66,#1f4fb2);
+  color:white;
+  padding:36px;
+  border-radius:20px;
+  margin-bottom:24px;
+}
+.hero h1{font-size:2.4rem;margin-bottom:8px}
+.card{
+  background:white;
+  border-radius:18px;
+  padding:24px;
+  margin-bottom:24px;
+  box-shadow:0 8px 25px rgba(0,0,0,.07);
+}
+h2{color:var(--azul2);font-size:1.8rem}
+h3{color:var(--azul)}
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:16px;
+}
+button,.btn{
+  display:inline-block;
+  background:var(--azul);
+  color:white;
+  border:none;
+  padding:12px 18px;
+  border-radius:10px;
+  font-weight:bold;
+  cursor:pointer;
+  text-decoration:none;
+  margin-top:10px;
+}
+button:hover,.btn:hover{background:#143b8f}
+.nivel-btn{
+  background:white;
+  color:var(--azul);
+  border:2px solid var(--azul);
+}
+.nivel-btn:hover,.nivel-btn.activo{
+  background:var(--azul);
+  color:white;
+}
 .nivel-box{
   margin-top:20px;
-  background:#ffffff;
-  border:1px solid #d6e4ec;
-  border-radius:14px;
+  border:1px solid #d7e3f7;
+  border-radius:16px;
   padding:22px;
+  background:#fbfdff;
 }
-
-.nivel-box h3{
-  color:#1a5276;
-}
-
-.nivel-box h4{
-  color:#2c3e50;
-  margin-top:18px;
-}
-
 .validacion{
-  margin-top:18px;
-  background:#eaf2f8;
+  background:var(--celeste);
+  border-left:5px solid var(--azul);
   padding:18px;
   border-radius:12px;
-  border-left:5px solid #1a5276;
+  margin-top:18px;
 }
-
-.validacion label{
+label{
   display:block;
+  background:white;
+  border:1px solid #d9e2ef;
+  padding:11px;
+  border-radius:9px;
   margin:8px 0;
-  background:#fff;
-  padding:10px;
-  border-radius:8px;
-  border:1px solid #d6e4ec;
 }
-
-.orientacion{
-  margin-top:14px;
-  background:#fff8e1;
+.correcto{
+  background:#ecfdf3;
+  color:#065f2f;
   padding:12px;
   border-radius:8px;
+  font-weight:bold;
+}
+.incorrecto{
+  background:#fff1f2;
+  color:#991b1b;
+  padding:12px;
+  border-radius:8px;
+  font-weight:bold;
+}
+.orientacion{
+  background:#fff8e1;
   border-left:4px solid #f5b041;
+  padding:12px;
+  border-radius:8px;
+}
+iframe{
+  width:100%;
+  border:none;
+  border-radius:14px;
+  background:#e5e7eb;
+}
+.recurso{
+  margin-top:24px;
+  padding:18px;
+  border-radius:14px;
+  border:1px solid #dce6f5;
+  background:#ffffff;
+}
+.referencias li{margin-bottom:10px}
+@media(max-width:850px){
+  .layout{grid-template-columns:1fr}
+  aside{height:auto;position:relative}
+  .hero h1{font-size:1.8rem}
 }
 </style>
 </head>
-<body>
 
+<body>
 <div class="layout">
+
 <aside>
-<h2>🌐 ODP IoT</h2>
-<p>Grado décimo<br>Tecnología e Informática</p>
-<a href="#inicio">Inicio</a>
-<a href="#actividad">Actividad inicial</a>
-<a href="#contenido">Contenido</a>
-<a href="#recursos">Recursos</a>
-<a href="#guia">Guía</a>
-<a href="#resumen">Resumen</a>
-<a href="#quiz">Evaluación</a>
-<a href="#referencias">Referencias</a>
+  <h2>🌐 ODP IoT</h2>
+  <p><strong>Grado:</strong> Décimo<br><strong>Área:</strong> Tecnología e Informática</p>
+  <a href="#inicio">Inicio</a>
+  <a href="#actividad">Actividad inicial</a>
+  <a href="#contenido">Contenido por niveles</a>
+  <a href="#recursos">Recursos multimedia</a>
+  <a href="#guia">Guía del estudiante</a>
+  <a href="#resumen">Resumen</a>
+  <a href="#evaluacion">Evaluación rápida</a>
+  <a href="#externas">Actividades externas</a>
+  <a href="#ia">Uso de IA</a>
+  <a href="#referencias">Referencias</a>
 </aside>
 
 <main>
+
 <section id="inicio" class="hero">
-<h1>El Universo del IoT: Conectividad y Ecosistema</h1>
-<p>Explora cómo los objetos cotidianos capturan datos, se conectan a internet y toman decisiones inteligentes.</p>
+  <h1>El Universo del IoT: Conectividad y Ecosistema</h1>
+  <p>Plataforma educativa interactiva para comprender cómo los objetos cotidianos se conectan, recopilan datos y generan acciones inteligentes.</p>
 </section>
 
 <section id="actividad" class="card">
-<h2>🔍 Actividad inicial</h2>
-<p>Selecciona cuáles objetos podrían pertenecer al Internet de las Cosas.</p>
-<div class="grid">
-<button onclick="respuesta(true)">⌚ Reloj inteligente</button>
-<button onclick="respuesta(false)">☕ Taza común</button>
-<button onclick="respuesta(true)">🌡️ Termostato inteligente</button>
-<button onclick="respuesta(false)">🪑 Silla de madera</button>
-</div>
-<p id="feedback"></p>
+  <h2>🔍 Actividad inicial</h2>
+  <p>Selecciona si el escenario corresponde o no a Internet de las Cosas.</p>
+  <div id="escenario"></div>
 </section>
 
 <section id="contenido" class="card">
   <h2>📚 Contenido conceptual introductorio</h2>
-  <p>
-    Explora los niveles de aprendizaje sobre Internet de las Cosas. 
-    Cada nivel incluye explicación, ejemplos y preguntas de validación para orientar tu comprensión.
-  </p>
+  <p>Explora los niveles de aprendizaje. Cada nivel incluye explicación, ejemplos y preguntas de validación con retroalimentación.</p>
 
   <div class="grid">
-    <button onclick="mostrarNivel('basico')">🌱 Nivel 1: Básico</button>
-    <button onclick="mostrarNivel('medio')">📡 Nivel 2: Medio</button>
-    <button onclick="mostrarNivel('avanzado')">🌍 Nivel 3: Aplicaciones y ética</button>
+    <button class="nivel-btn activo" onclick="mostrarNivel('basico',this)">🌱 Nivel 1: Básico</button>
+    <button class="nivel-btn" onclick="mostrarNivel('medio',this)">📡 Nivel 2: Medio</button>
+    <button class="nivel-btn" onclick="mostrarNivel('avanzado',this)">🌍 Nivel 3: Aplicaciones y ética</button>
   </div>
 
-  <div id="nivel-basico" class="nivel-box" style="display:block;">
+  <div id="nivel-basico" class="nivel-box">
     <h3>🌱 Nivel 1: Conceptos básicos de IoT</h3>
-
-    <p>
-      <strong>¿Qué es Internet de las Cosas?</strong> Internet de las Cosas se refiere a la red global de dispositivos físicos,
-      máquinas, electrodomésticos y otros objetos que están equipados con sensores, software y conectividad de red.
-      Esto les permite recopilar, intercambiar y actuar sobre datos a través de Internet sin intervención humana directa.
-    </p>
+    <p><strong>¿Qué es Internet de las Cosas?</strong> Es una red global de dispositivos físicos, máquinas, electrodomésticos y otros objetos equipados con sensores, software y conectividad de red. Esto les permite recopilar, intercambiar y actuar sobre datos a través de Internet sin intervención humana directa.</p>
 
     <h4>Ejemplos cotidianos</h4>
     <ul>
-      <li>Smartphones y dispositivos wearables, como relojes inteligentes y pulseras de actividad.</li>
-      <li>Electrodomésticos inteligentes, como refrigeradores, lavadoras y hornos.</li>
-      <li>Sistemas de seguridad del hogar, como cámaras y cerraduras inteligentes.</li>
-      <li>Dispositivos de salud, como medidores de glucosa y monitores cardíacos.</li>
+      <li>Smartphones y relojes inteligentes.</li>
+      <li>Electrodomésticos inteligentes.</li>
+      <li>Cámaras y cerraduras inteligentes.</li>
+      <li>Dispositivos de salud como monitores cardíacos.</li>
     </ul>
 
-    <p>
-      <strong>Componentes principales:</strong> Los sistemas IoT generalmente incluyen sensores, actuadores,
-      conectividad y procesamiento en la nube.
-    </p>
+    <p><strong>Componentes principales:</strong> sensores, actuadores, conectividad y procesamiento en la nube.</p>
 
     <div class="validacion">
-      <h4>✅ Preguntas de validación</h4>
+      <h4>✅ Validación del nivel básico</h4>
+      <p>1. ¿Qué es IoT?</p>
+      <label><input type="radio" name="nb1" value="a"> Una red de objetos físicos conectados que recopilan e intercambian datos.</label>
+      <label><input type="radio" name="nb1" value="b"> Un conjunto de páginas web sin dispositivos físicos.</label>
 
-      <p><strong>1. ¿Qué es Internet de las Cosas?</strong></p>
-      <label><input type="radio" name="nb1" value="a"> Una red de objetos físicos conectados que recopilan e intercambian datos.</label><br>
-      <label><input type="radio" name="nb1" value="b"> Una colección de páginas web sin dispositivos físicos.</label><br>
+      <p>2. ¿Cuál es un ejemplo de IoT?</p>
+      <label><input type="radio" name="nb2" value="a"> Un reloj inteligente.</label>
+      <label><input type="radio" name="nb2" value="b"> Una silla de madera sin sensores.</label>
 
-      <p><strong>2. ¿Cuál de estos es un ejemplo de dispositivo IoT?</strong></p>
-      <label><input type="radio" name="nb2" value="a"> Un reloj inteligente.</label><br>
-      <label><input type="radio" name="nb2" value="b"> Una silla de madera sin sensores.</label><br>
+      <button onclick="validar(['nb1','nb2'],['a','a'],'resBasico','IoT conecta objetos físicos con sensores, software y red.')">Validar respuestas</button>
+      <p id="resBasico"></p>
 
-      <button onclick="validarNivelBasico()">Validar nivel básico</button>
-      <p id="resNivelBasico"></p>
-
-      <p class="orientacion">
-        💡 <strong>Pregunta de reflexión:</strong> ¿Cuáles de los dispositivos que utilizas diariamente son parte del IoT?
-        ¿Qué datos podrían estar recopilando?
-      </p>
+      <p class="orientacion">💡 Reflexión: ¿Cuáles dispositivos que usas diariamente son parte del IoT? ¿Qué datos podrían recopilar?</p>
     </div>
   </div>
 
-  <div id="nivel-medio" class="nivel-box" style="display:none;">
-    <h3>📡 Nivel 2: Componentes y funcionamiento del ecosistema IoT</h3>
+  <div id="nivel-medio" class="nivel-box" style="display:none">
+    <h3>📡 Nivel 2: Componentes y funcionamiento</h3>
+    <p>Un sistema IoT funciona como un ecosistema. Los sensores capturan información del entorno, la conectividad permite transmitirla, el procesamiento analiza los datos y los actuadores ejecutan acciones físicas.</p>
 
-    <p>
-      Un sistema IoT funciona como un ecosistema donde varios elementos trabajan juntos. 
-      Primero, los sensores capturan información del entorno, como temperatura, movimiento, humedad, presión o ubicación.
-      Luego, esa información viaja por una red mediante tecnologías como Wi-Fi, Bluetooth, redes celulares, fibra óptica o satélite.
-    </p>
-
-    <p>
-      Después, los datos pueden ser procesados en una aplicación, servidor o plataforma en la nube. 
-      Cuando el sistema necesita ejecutar una acción física, intervienen los actuadores, por ejemplo, una válvula que abre el paso del agua
-      o una cerradura inteligente que se bloquea desde una aplicación móvil.
-    </p>
-
-    <h4>Elementos principales del ecosistema IoT</h4>
     <ul>
-      <li><strong>Sensores:</strong> capturan datos del entorno.</li>
-      <li><strong>Actuadores:</strong> ejecutan acciones físicas.</li>
-      <li><strong>Conectividad:</strong> permite transferir datos entre dispositivos.</li>
-      <li><strong>Procesamiento:</strong> analiza los datos y permite tomar decisiones.</li>
-      <li><strong>Aplicación:</strong> muestra información al usuario y permite controlar el sistema.</li>
+      <li><strong>Sensores:</strong> capturan datos.</li>
+      <li><strong>Actuadores:</strong> ejecutan acciones.</li>
+      <li><strong>Conectividad:</strong> transfiere datos.</li>
+      <li><strong>Nube:</strong> procesa y almacena información.</li>
+      <li><strong>Aplicación:</strong> permite al usuario visualizar y controlar.</li>
     </ul>
 
     <div class="validacion">
-      <h4>✅ Preguntas de validación</h4>
+      <h4>✅ Validación del nivel medio</h4>
+      <p>1. ¿Qué función cumple un sensor?</p>
+      <label><input type="radio" name="nm1" value="a"> Captura información del entorno.</label>
+      <label><input type="radio" name="nm1" value="b"> Solo decora el dispositivo.</label>
 
-      <p><strong>1. ¿Qué función cumple un sensor?</strong></p>
-      <label><input type="radio" name="nm1" value="a"> Capturar información del entorno.</label><br>
-      <label><input type="radio" name="nm1" value="b"> Decorar el dispositivo.</label><br>
+      <p>2. ¿Qué hace un actuador?</p>
+      <label><input type="radio" name="nm2" value="a"> Ejecuta una acción física.</label>
+      <label><input type="radio" name="nm2" value="b"> Borra todos los datos.</label>
 
-      <p><strong>2. ¿Qué función cumple un actuador?</strong></p>
-      <label><input type="radio" name="nm2" value="a"> Ejecutar una acción física según una orden.</label><br>
-      <label><input type="radio" name="nm2" value="b"> Crear una página web.</label><br>
+      <button onclick="validar(['nm1','nm2'],['a','a'],'resMedio','El sensor captura datos y el actuador realiza acciones.')">Validar respuestas</button>
+      <p id="resMedio"></p>
 
-      <button onclick="validarNivelMedio()">Validar nivel medio</button>
-      <p id="resNivelMedio"></p>
-
-      <p class="orientacion">
-        💡 <strong>Pregunta de reflexión:</strong> Si tuvieras que diseñar un sistema de riego inteligente,
-        ¿qué sensor usarías y qué acción debería realizar el actuador?
-      </p>
+      <p class="orientacion">💡 Reflexión: ¿Qué sensor usarías para un sistema de riego inteligente?</p>
     </div>
   </div>
 
-  <div id="nivel-avanzado" class="nivel-box" style="display:none;">
+  <div id="nivel-avanzado" class="nivel-box" style="display:none">
     <h3>🌍 Nivel 3: Aplicaciones y consideraciones éticas</h3>
+    <p>IoT se aplica en hogares inteligentes, ciudades inteligentes, agricultura de precisión, salud e industria 4.0. Su uso debe considerar seguridad, privacidad, equidad y responsabilidad ambiental.</p>
 
-    <p>
-      El Internet de las Cosas se aplica en muchos contextos de la vida real. 
-      Su valor está en conectar datos, dispositivos y decisiones para mejorar procesos, ahorrar recursos y responder de forma automática.
-    </p>
-
-    <h4>Aplicaciones del IoT en el mundo real</h4>
     <ul>
-      <li><strong>Hogar inteligente:</strong> automatización de climatización, iluminación, seguridad y electrodomésticos.</li>
-      <li><strong>Ciudades inteligentes:</strong> tráfico inteligente, iluminación pública y monitoreo ambiental.</li>
-      <li><strong>Agricultura de precisión:</strong> sensores en cultivos para optimizar riego, fertilización y prevenir plagas.</li>
-      <li><strong>Salud:</strong> dispositivos wearables para monitoreo continuo de pacientes y telemedicina.</li>
-      <li><strong>Industria 4.0:</strong> robots conectados, mantenimiento predictivo y optimización de procesos.</li>
+      <li><strong>Hogar inteligente:</strong> iluminación, seguridad y climatización.</li>
+      <li><strong>Agricultura:</strong> sensores para riego y monitoreo de cultivos.</li>
+      <li><strong>Salud:</strong> dispositivos wearables y telemedicina.</li>
+      <li><strong>Industria:</strong> mantenimiento predictivo y automatización.</li>
     </ul>
 
-    <p>
-      <strong>Seguridad y privacidad:</strong> es fundamental proteger los datos recopilados mediante encriptación.
-      Los usuarios deben saber qué datos se recopilan, cómo se usan y quién puede acceder a ellos.
-    </p>
-
-    <p>
-      <strong>Consideraciones éticas:</strong> el IoT debe usarse responsablemente, considerando el impacto ambiental,
-      la equidad de acceso a la tecnología y el uso ético de los datos personales.
-    </p>
-
     <div class="validacion">
-      <h4>✅ Preguntas de validación</h4>
+      <h4>✅ Validación del nivel avanzado</h4>
+      <p>1. ¿Cuál es una aplicación del IoT en agricultura?</p>
+      <label><input type="radio" name="na1" value="a"> Sensores para optimizar el riego.</label>
+      <label><input type="radio" name="na1" value="b"> Registrar datos solo en papel.</label>
 
-      <p><strong>1. ¿Cuál es una aplicación del IoT en agricultura?</strong></p>
-      <label><input type="radio" name="na1" value="a"> Sensores para optimizar riego y monitorear cultivos.</label><br>
-      <label><input type="radio" name="na1" value="b"> Usar solo papel para registrar datos.</label><br>
+      <p>2. ¿Qué aspecto ético es fundamental?</p>
+      <label><input type="radio" name="na2" value="a"> Proteger la privacidad y usar los datos responsablemente.</label>
+      <label><input type="radio" name="na2" value="b"> Recopilar datos sin informar al usuario.</label>
 
-      <p><strong>2. ¿Qué aspecto ético es importante en IoT?</strong></p>
-      <label><input type="radio" name="na2" value="a"> Proteger la privacidad y usar los datos de forma responsable.</label><br>
-      <label><input type="radio" name="na2" value="b"> Recopilar todos los datos sin informar al usuario.</label><br>
+      <button onclick="validar(['na1','na2'],['a','a'],'resAvanzado','El IoT debe usarse protegiendo privacidad, seguridad y equidad.')">Validar respuestas</button>
+      <p id="resAvanzado"></p>
 
-      <button onclick="validarNivelAvanzado()">Validar nivel avanzado</button>
-      <p id="resNivelAvanzado"></p>
-
-      <p class="orientacion">
-        💡 <strong>Pregunta de reflexión:</strong> ¿Cuáles son los beneficios y riesgos del IoT en tu comunidad?
-        ¿Cómo se podría usar de manera ética?
-      </p>
+      <p class="orientacion">💡 Reflexión: ¿Cuáles son los beneficios y riesgos del IoT en tu comunidad?</p>
     </div>
   </div>
 </section>
 
 <section id="recursos" class="card">
-<h2>🎥 Recursos multimedia</h2>
+  <h2>🎥 Recursos multimedia</h2>
 
-<h3>Video: Evolución</h3>
-<iframe height="420" src="https://drive.google.com/file/d/1ZVG5tL2iFzXXoezd3HwYvebDkS2M8fVo/preview" allow="autoplay"></iframe>
-<a class="btn" target="_blank" href="https://drive.google.com/file/d/1ZVG5tL2iFzXXoezd3HwYvebDkS2M8fVo/view">Abrir video</a>
+  <div class="recurso">
+    <h3>Video: Evolución</h3>
+    <iframe height="420" src="https://drive.google.com/file/d/1ZVG5tL2iFzXXoezd3HwYvebDkS2M8fVo/preview" allow="autoplay"></iframe>
+    <a class="btn" target="_blank" href="https://drive.google.com/file/d/1ZVG5tL2iFzXXoezd3HwYvebDkS2M8fVo/view">Abrir video</a>
 
-<div class="card">
-<h3>✅ Validación del video</h3>
-<p>1. ¿Qué permite el IoT en la vida cotidiana?</p>
-<label><input type="radio" name="video1" value="a"> Conectar objetos para enviar y recibir datos</label><br>
-<label><input type="radio" name="video1" value="b"> Usar solo computadores sin internet</label><br>
+    <div class="validacion">
+      <h4>✅ Validación del video</h4>
+      <p>1. ¿Qué permite el IoT?</p>
+      <label><input type="radio" name="video1" value="a"> Conectar objetos para enviar y recibir datos.</label>
+      <label><input type="radio" name="video1" value="b"> Usar objetos sin conexión.</label>
 
-<p>2. ¿Qué elemento permite captar información del entorno?</p>
-<label><input type="radio" name="video2" value="a"> Sensor</label><br>
-<label><input type="radio" name="video2" value="b"> Impresora</label><br>
+      <p>2. ¿Qué elemento capta información?</p>
+      <label><input type="radio" name="video2" value="a"> Sensor.</label>
+      <label><input type="radio" name="video2" value="b"> Papel.</label>
 
-<button onclick="validarVideo()">Calificar video</button>
-<p id="resVideo"></p>
-</div>
+      <button onclick="validar(['video1','video2'],['a','a'],'resVideo','El video muestra que IoT conecta dispositivos mediante sensores, datos y redes.')">Calificar video</button>
+      <p id="resVideo"></p>
+    </div>
+  </div>
 
-<h3>Podcast: El Internet de las Cosas</h3>
-<iframe height="120" src="https://drive.google.com/file/d/1-ktAZYlqvzeljKjGpW8uH89qgmRVLhsD/preview" allow="autoplay"></iframe>
-<a class="btn" target="_blank" href="https://drive.google.com/file/d/1-ktAZYlqvzeljKjGpW8uH89qgmRVLhsD/view">Abrir podcast</a>
+  <div class="recurso">
+    <h3>Podcast: El Internet de las Cosas</h3>
+    <iframe height="120" src="https://drive.google.com/file/d/1-ktAZYlqvzeljKjGpW8uH89qgmRVLhsD/preview" allow="autoplay"></iframe>
+    <a class="btn" target="_blank" href="https://drive.google.com/file/d/1-ktAZYlqvzeljKjGpW8uH89qgmRVLhsD/view">Abrir podcast</a>
 
-<div class="card">
-<h3>🎧 Micropreguntas del audio</h3>
-<p>1. ¿Qué hace inteligente a un dispositivo IoT?</p>
-<label><input type="radio" name="audio1" value="a"> Que tenga sensores, conexión y propósito</label><br>
-<label><input type="radio" name="audio1" value="b"> Que sea costoso</label><br>
+    <div class="validacion">
+      <h4>🎧 Micropreguntas del audio</h4>
+      <p>1. ¿Qué hace inteligente a un dispositivo IoT?</p>
+      <label><input type="radio" name="audio1" value="a"> Tener sensores, conexión y propósito.</label>
+      <label><input type="radio" name="audio1" value="b"> Ser costoso.</label>
 
-<p>2. ¿Por qué es importante la conectividad?</p>
-<label><input type="radio" name="audio2" value="a"> Porque permite comunicar datos entre dispositivos</label><br>
-<label><input type="radio" name="audio2" value="b"> Porque elimina todos los errores</label><br>
+      <p>2. ¿Por qué es importante la conectividad?</p>
+      <label><input type="radio" name="audio2" value="a"> Permite comunicar datos entre dispositivos.</label>
+      <label><input type="radio" name="audio2" value="b"> Evita estudiar el tema.</label>
 
-<button onclick="validarAudio()">Calificar audio</button>
-<p id="resAudio"></p>
-</div>
+      <button onclick="validar(['audio1','audio2'],['a','a'],'resAudio','La conectividad permite que los dispositivos compartan información útil.')">Calificar audio</button>
+      <p id="resAudio"></p>
+    </div>
+  </div>
 
-<h3>Infografía</h3>
-<iframe height="520" src="https://drive.google.com/file/d/1iPsy10SBzb0xUqLkjwJWnwFosEESFLyo/preview"></iframe>
-<a class="btn" target="_blank" href="https://drive.google.com/file/d/1iPsy10SBzb0xUqLkjwJWnwFosEESFLyo/view">Ver infografía</a>
+  <div class="recurso">
+    <h3>Infografía</h3>
+    <iframe height="520" src="https://drive.google.com/file/d/1iPsy10SBzb0xUqLkjwJWnwFosEESFLyo/preview"></iframe>
+    <a class="btn" target="_blank" href="https://drive.google.com/file/d/1iPsy10SBzb0xUqLkjwJWnwFosEESFLyo/view">Ver infografía</a>
 
-<div class="card">
-<h3>🖼️ Preguntas sobre la infografía</h3>
-<p>1. ¿Cuáles son vías de conectividad IoT?</p>
-<label><input type="radio" name="info1" value="a"> Wi-Fi, Bluetooth, redes celulares y fibra óptica</label><br>
-<label><input type="radio" name="info1" value="b"> Lápiz, papel y cuaderno</label><br>
+    <div class="validacion">
+      <h4>🖼️ Preguntas sobre la infografía</h4>
+      <p>1. ¿Cuáles son vías de conectividad IoT?</p>
+      <label><input type="radio" name="info1" value="a"> Wi-Fi, Bluetooth, redes celulares y fibra óptica.</label>
+      <label><input type="radio" name="info1" value="b"> Lápiz, papel y cuaderno.</label>
 
-<p>2. ¿Qué capa permite al usuario visualizar y gestionar datos?</p>
-<label><input type="radio" name="info2" value="a"> Interfaz o aplicación</label><br>
-<label><input type="radio" name="info2" value="b"> Cable eléctrico únicamente</label><br>
+      <p>2. ¿Qué capa permite visualizar y gestionar datos?</p>
+      <label><input type="radio" name="info2" value="a"> Interfaz o aplicación.</label>
+      <label><input type="radio" name="info2" value="b"> Una silla sin sensores.</label>
 
-<button onclick="validarInfo()">Calificar infografía</button>
-<p id="resInfo"></p>
-</div>
+      <button onclick="validar(['info1','info2'],['a','a'],'resInfo','La infografía muestra conectividad, sensores, infraestructura, interfaz, seguridad y gestión.')">Calificar infografía</button>
+      <p id="resInfo"></p>
+    </div>
+  </div>
 </section>
 
 <section id="guia" class="card">
-<h2>📘 Guía completa para el estudiante</h2>
-<iframe height="560" src="https://drive.google.com/file/d/1TVS_HHnYahOwq63Ocj8i3Be9ttTn9vd1/preview"></iframe>
-<a class="btn" target="_blank" href="https://drive.google.com/file/d/1TVS_HHnYahOwq63Ocj8i3Be9ttTn9vd1/view">Abrir guía</a>
+  <h2>📘 Guía completa para el estudiante</h2>
+  <iframe height="560" src="https://drive.google.com/file/d/1TVS_HHnYahOwq63Ocj8i3Be9ttTn9vd1/preview"></iframe>
+  <a class="btn" target="_blank" href="https://drive.google.com/file/d/1TVS_HHnYahOwq63Ocj8i3Be9ttTn9vd1/view">Abrir guía</a>
 </section>
 
 <section id="resumen" class="card">
-<h2>📄 Resumen</h2>
-<iframe height="560" src="https://drive.google.com/file/d/1Rh9DS25V1lNvrG1eb9l16Y9qB_ysq6_z/preview"></iframe>
-<a class="btn" target="_blank" href="https://drive.google.com/file/d/1Rh9DS25V1lNvrG1eb9l16Y9qB_ysq6_z/view">Abrir resumen</a>
+  <h2>📄 Resumen</h2>
+  <iframe height="560" src="https://drive.google.com/file/d/1Rh9DS25V1lNvrG1eb9l16Y9qB_ysq6_z/preview"></iframe>
+  <a class="btn" target="_blank" href="https://drive.google.com/file/d/1Rh9DS25V1lNvrG1eb9l16Y9qB_ysq6_z/view">Abrir resumen</a>
 </section>
 
-<section id="quiz" class="card quiz">
-<h2>📝 Evaluación rápida ampliada</h2>
+<section id="evaluacion" class="card">
+  <h2>📝 Evaluación rápida ampliada</h2>
 
-<p>1. ¿Qué es Internet de las Cosas?</p>
-<label><input type="radio" name="q1" value="a"> Red de objetos físicos conectados que intercambian datos</label><br>
-<label><input type="radio" name="q1" value="b"> Solo páginas web conectadas</label><br>
+  <p>1. ¿Qué es IoT?</p>
+  <label><input type="radio" name="q1" value="a"> Red de objetos físicos conectados que intercambian datos.</label>
+  <label><input type="radio" name="q1" value="b"> Solo páginas web.</label>
 
-<p>2. ¿Qué componente capta información del entorno?</p>
-<label><input type="radio" name="q2" value="a"> Sensor</label><br>
-<label><input type="radio" name="q2" value="b"> Actuador</label><br>
+  <p>2. ¿Qué componente capta datos?</p>
+  <label><input type="radio" name="q2" value="a"> Sensor.</label>
+  <label><input type="radio" name="q2" value="b"> Actuador.</label>
 
-<p>3. ¿Qué hace un actuador?</p>
-<label><input type="radio" name="q3" value="a"> Ejecuta acciones físicas según una orden</label><br>
-<label><input type="radio" name="q3" value="b"> Solo almacena datos</label><br>
+  <p>3. ¿Qué hace un actuador?</p>
+  <label><input type="radio" name="q3" value="a"> Ejecuta acciones físicas.</label>
+  <label><input type="radio" name="q3" value="b"> Solo almacena datos.</label>
 
-<p>4. ¿Cuál es un ejemplo de IoT?</p>
-<label><input type="radio" name="q4" value="a"> Sistema de riego automático con sensores</label><br>
-<label><input type="radio" name="q4" value="b"> Libro impreso</label><br>
+  <p>4. ¿Cuál es un ejemplo de IoT?</p>
+  <label><input type="radio" name="q4" value="a"> Sistema de riego con sensores.</label>
+  <label><input type="radio" name="q4" value="b"> Libro impreso.</label>
 
-<p>5. ¿Qué riesgo debe cuidarse en IoT?</p>
-<label><input type="radio" name="q5" value="a"> Privacidad y seguridad de los datos</label><br>
-<label><input type="radio" name="q5" value="b"> El color del dispositivo</label><br>
+  <p>5. ¿Qué riesgo debe cuidarse?</p>
+  <label><input type="radio" name="q5" value="a"> Privacidad y seguridad de datos.</label>
+  <label><input type="radio" name="q5" value="b"> El color del dispositivo.</label>
 
-<p>6. ¿Qué permite la conectividad?</p>
-<label><input type="radio" name="q6" value="a"> Comunicación entre dispositivos</label><br>
-<label><input type="radio" name="q6" value="b"> Desconectar sensores</label><br>
+  <p>6. ¿Qué permite la conectividad?</p>
+  <label><input type="radio" name="q6" value="a"> Comunicación entre dispositivos.</label>
+  <label><input type="radio" name="q6" value="b"> Desconexión total.</label>
 
-<p>7. ¿Dónde suelen procesarse muchos datos IoT?</p>
-<label><input type="radio" name="q7" value="a"> En aplicaciones o plataformas en la nube</label><br>
-<label><input type="radio" name="q7" value="b"> Solo en papel</label><br>
+  <p>7. ¿Dónde se procesan muchos datos IoT?</p>
+  <label><input type="radio" name="q7" value="a"> En plataformas o aplicaciones en la nube.</label>
+  <label><input type="radio" name="q7" value="b"> Solo en papel.</label>
 
-<p>8. ¿Qué es telemetría?</p>
-<label><input type="radio" name="q8" value="a"> Datos enviados por un dispositivo hacia una plataforma</label><br>
-<label><input type="radio" name="q8" value="b"> Una orden para apagar el internet</label><br>
+  <p>8. ¿Qué es telemetría?</p>
+  <label><input type="radio" name="q8" value="a"> Datos enviados por un dispositivo hacia una plataforma.</label>
+  <label><input type="radio" name="q8" value="b"> Una orden para apagar internet.</label>
 
-<button onclick="calificarQuizFinal()">Calificar evaluación</button>
-<p id="resultado"></p>
+  <button onclick="validar(['q1','q2','q3','q4','q5','q6','q7','q8'],['a','a','a','a','a','a','a','a'],'resFinal','Repasa los niveles conceptuales y vuelve a intentar.')">Calificar evaluación</button>
+  <p id="resFinal"></p>
 </section>
 
-<section id="actividades" class="card">
-<h2>🌐 Actividades interactivas externas</h2>
-<p>Explora estas actividades para reforzar el aprendizaje:</p>
-<ul>
-<li><a target="_blank" href="https://es.educaplay.com/recursos/12826528-test_internet_de_las_cosas_iot.html">Test interactivo sobre IoT - Educaplay</a></li>
-<li><a target="_blank" href="https://es.educaplay.com/recursos/9898956-internet_de_las_cosas.html">Juego de parejas sobre IoT - Educaplay</a></li>
-<li><a target="_blank" href="https://proyecto-descartes.org/iCartesiLibri/laboratorios/proyectos/Internet_de_las_Cosas/">Laboratorio IoT - Proyecto Descartes</a></li>
-<li><a target="_blank" href="https://www.eduteka.org/herramientas/plan-de-clase-internet-de-las-cosas">Plan de clase IoT - Eduteka</a></li>
-<li><a target="_blank" href="https://laboratorios.ua.es/es/talleres/iot-secundaria.html">Taller IoT para secundaria - Universidad de Alcalá</a></li>
-</ul>
+<section id="externas" class="card">
+  <h2>🌐 Actividades interactivas externas</h2>
+  <ul>
+    <li><a target="_blank" href="https://es.educaplay.com/recursos/12826528-test_internet_de_las_cosas_iot.html">Test interactivo sobre IoT - Educaplay</a></li>
+    <li><a target="_blank" href="https://es.educaplay.com/recursos/9898956-internet_de_las_cosas.html">Juego de parejas sobre IoT - Educaplay</a></li>
+    <li><a target="_blank" href="https://proyecto-descartes.org/iCartesiLibri/laboratorios/proyectos/Internet_de_las_Cosas/">Laboratorio IoT - Proyecto Descartes</a></li>
+    <li><a target="_blank" href="https://www.eduteka.org/herramientas/plan-de-clase-internet-de-las-cosas">Plan de clase IoT - Eduteka</a></li>
+    <li><a target="_blank" href="https://laboratorios.ua.es/es/talleres/iot-secundaria.html">Taller IoT para secundaria - Universidad de Alcalá</a></li>
+  </ul>
 </section>
 
-<section id="referencias" class="card">
-<h2>📖 Referencias bibliográficas</h2>
-<ol>
-<li>La web de Edu. (s.f.). <em>Bloque 2 – Internet de las Cosas (IoT)</em>.</li>
-<li>Robótica 2 ESO. (s.f.). <em>Internet de las cosas (IoT)</em>.</li>
-<li>Educaplay. (s.f.). <em>Test: Internet de las cosas IoT</em>.</li>
-<li>Educaplay. (s.f.). <em>Juego de parejas – IoT</em>.</li>
-<li>Proyecto Descartes. (s.f.). <em>Introducción al IoT</em>.</li>
-<li>UNIR. (s.f.). <em>Internet de las cosas: definición, funcionamiento y ejemplos</em>.</li>
-<li>EdutekaLab. (s.f.). <em>Conectando el mundo: redes, internet e IoT</em>.</li>
-<li>Universidad de Alcalá. (s.f.). <em>Internet de las Cosas (IoT)</em>.</li>
-<li>RealVNC. (s.f.). <em>La tecnología IoT en la educación</em>.</li>
-</ol>
-</section>
-<section class="card">
-<h2>🤖 Uso responsable de IA</h2>
-<p>El material fue revisado y adaptado pedagógicamente antes de su publicación.</p>
+<section id="ia" class="card">
+  <h2>🤖 Nota sobre uso de IA generativa</h2>
+  <p>Este Objeto Digital Pedagógico fue desarrollado con apoyo de herramientas de inteligencia artificial generativa. El contenido fue revisado, ajustado y organizado pedagógicamente para apoyar el aprendizaje.</p>
+  <p><strong>Recomendación:</strong> usa la IA como herramienta de apoyo, verifica la información y desarrolla pensamiento crítico.</p>
 </section>
 
-<section id="referencias" class="card">
-<h2>📖 Referencias</h2>
-<p>Incluye tus fuentes APA 7 aquí.</p>
+<section id="referencias" class="card referencias">
+  <h2>📖 Referencias bibliográficas</h2>
+  <ol>
+    <li>La web de Edu. (s.f.). <em>Bloque 2 – Internet de las Cosas (IoT)</em>.</li>
+    <li>Robótica 2 ESO. (s.f.). <em>Internet de las cosas (IoT)</em>.</li>
+    <li>Educaplay. (s.f.). <em>Test: Internet de las cosas IoT</em>.</li>
+    <li>Educaplay. (s.f.). <em>Juego de parejas – IoT</em>.</li>
+    <li>Proyecto Descartes. (s.f.). <em>Introducción al IoT</em>.</li>
+    <li>UNIR. (s.f.). <em>Internet de las cosas: definición, funcionamiento y ejemplos</em>.</li>
+    <li>EdutekaLab. (s.f.). <em>Conectando el mundo: redes, internet e IoT</em>.</li>
+    <li>Universidad de Alcalá. (s.f.). <em>Internet de las Cosas (IoT)</em>.</li>
+    <li>RealVNC. (s.f.). <em>La tecnología IoT en la educación</em>.</li>
+  </ol>
 </section>
+
 </main>
 </div>
 
 <script>
-function mostrarNivel(nivel){
-  document.getElementById("nivel-basico").style.display = "none";
-  document.getElementById("nivel-medio").style.display = "none";
-  document.getElementById("nivel-avanzado").style.display = "none";
+const escenarios=[
+  {texto:"Un sistema controla temperatura, iluminación y seguridad del hogar desde una aplicación móvil.", ok:true},
+  {texto:"Una persona lee un libro impreso sin dispositivos conectados a Internet.", ok:false},
+  {texto:"Sensores en cultivos monitorean humedad, temperatura y nutrientes para optimizar el riego.", ok:true},
+  {texto:"Un reloj inteligente registra ritmo cardíaco, pasos y sueño, sincronizándose con el celular.", ok:true}
+];
+let actual=0, aciertos=0;
 
-  document.getElementById("nivel-" + nivel).style.display = "block";
+function pintarEscenario(){
+  const e=escenarios[actual];
+  document.getElementById("escenario").innerHTML=`
+    <h3>Progreso: ${actual} de ${escenarios.length} escenarios</h3>
+    <p><strong>¿Es este un escenario de IoT?</strong></p>
+    <p>${e.texto}</p>
+    <button onclick="responderEscenario(true)">✓ Sí, es IoT</button>
+    <button onclick="responderEscenario(false)">✕ No es IoT</button>
+  `;
 }
 
-function validarNivelBasico(){
-  let p1 = document.querySelector('input[name="nb1"]:checked');
-  let p2 = document.querySelector('input[name="nb2"]:checked');
-  let puntos = 0;
-
-  if(p1 && p1.value === "a") puntos++;
-  if(p2 && p2.value === "a") puntos++;
-
-  document.getElementById("resNivelBasico").innerHTML =
-    "Resultado: " + puntos + "/2. " +
-    (puntos === 2
-      ? "¡Muy bien! Comprendiste qué es IoT y reconoces ejemplos cotidianos."
-      : "Revisa la explicación: IoT conecta objetos físicos con sensores, software y red.");
+function responderEscenario(resp){
+  const correcto=resp===escenarios[actual].ok;
+  if(correcto) aciertos++;
+  actual++;
+  if(actual>=escenarios.length){
+    document.getElementById("escenario").innerHTML=`
+      <h3>¡Actividad completada!</h3>
+      <p>Identificaste correctamente <strong>${aciertos} de ${escenarios.length}</strong> escenarios de IoT.</p>
+      <button onclick="actual=0;aciertos=0;pintarEscenario()">Reintentar</button>
+    `;
+  }else{
+    document.getElementById("escenario").innerHTML=`
+      <p class="${correcto?'correcto':'incorrecto'}">${correcto?'✅ ¡Correcto!':'❌ Revisa el concepto.'}</p>
+      <button onclick="pintarEscenario()">Siguiente escenario</button>
+    `;
+  }
 }
 
-function validarNivelMedio(){
-  let p1 = document.querySelector('input[name="nm1"]:checked');
-  let p2 = document.querySelector('input[name="nm2"]:checked');
-  let puntos = 0;
-
-  if(p1 && p1.value === "a") puntos++;
-  if(p2 && p2.value === "a") puntos++;
-
-  document.getElementById("resNivelMedio").innerHTML =
-    "Resultado: " + puntos + "/2. " +
-    (puntos === 2
-      ? "¡Excelente! Identificas sensores, actuadores y funcionamiento del ecosistema IoT."
-      : "Repasa la diferencia: el sensor captura datos y el actuador ejecuta acciones.");
+function mostrarNivel(nivel,btn){
+  ["basico","medio","avanzado"].forEach(n=>{
+    document.getElementById("nivel-"+n).style.display="none";
+  });
+  document.getElementById("nivel-"+nivel).style.display="block";
+  document.querySelectorAll(".nivel-btn").forEach(b=>b.classList.remove("activo"));
+  btn.classList.add("activo");
 }
 
-function validarNivelAvanzado(){
-  let p1 = document.querySelector('input[name="na1"]:checked');
-  let p2 = document.querySelector('input[name="na2"]:checked');
-  let puntos = 0;
-
-  if(p1 && p1.value === "a") puntos++;
-  if(p2 && p2.value === "a") puntos++;
-
-  document.getElementById("resNivelAvanzado").innerHTML =
-    "Resultado: " + puntos + "/2. " +
-    (puntos === 2
-      ? "¡Muy bien! Comprendes aplicaciones reales y consideraciones éticas del IoT."
-      : "Revisa las aplicaciones y recuerda que privacidad, seguridad y ética son esenciales.");
+function validar(nombres,correctas,id,mensaje){
+  let puntos=0;
+  nombres.forEach((nombre,i)=>{
+    const r=document.querySelector(`input[name="${nombre}"]:checked`);
+    if(r && r.value===correctas[i]) puntos++;
+  });
+  const total=correctas.length;
+  const ok=puntos===total;
+  document.getElementById(id).innerHTML=`
+    <span class="${ok?'correcto':'incorrecto'}">
+    Resultado: ${puntos}/${total}. ${ok?'¡Excelente! Comprendiste el contenido.':mensaje}
+    </span>`;
 }
+
+pintarEscenario();
 </script>
 
 </body>
