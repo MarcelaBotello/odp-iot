@@ -75,13 +75,55 @@ button{background:var(--azul);color:white;border:0;border-radius:8px;padding:12p
 <iframe height="420" src="https://drive.google.com/file/d/1ZVG5tL2iFzXXoezd3HwYvebDkS2M8fVo/preview" allow="autoplay"></iframe>
 <a class="btn" target="_blank" href="https://drive.google.com/file/d/1ZVG5tL2iFzXXoezd3HwYvebDkS2M8fVo/view">Abrir video</a>
 
+<div class="card">
+<h3>✅ Validación del video</h3>
+<p>1. ¿Qué permite el IoT en la vida cotidiana?</p>
+<label><input type="radio" name="video1" value="a"> Conectar objetos para enviar y recibir datos</label><br>
+<label><input type="radio" name="video1" value="b"> Usar solo computadores sin internet</label><br>
+
+<p>2. ¿Qué elemento permite captar información del entorno?</p>
+<label><input type="radio" name="video2" value="a"> Sensor</label><br>
+<label><input type="radio" name="video2" value="b"> Impresora</label><br>
+
+<button onclick="validarVideo()">Calificar video</button>
+<p id="resVideo"></p>
+</div>
+
 <h3>Podcast: El Internet de las Cosas</h3>
 <iframe height="120" src="https://drive.google.com/file/d/1-ktAZYlqvzeljKjGpW8uH89qgmRVLhsD/preview" allow="autoplay"></iframe>
 <a class="btn" target="_blank" href="https://drive.google.com/file/d/1-ktAZYlqvzeljKjGpW8uH89qgmRVLhsD/view">Abrir podcast</a>
 
+<div class="card">
+<h3>🎧 Micropreguntas del audio</h3>
+<p>1. ¿Qué hace inteligente a un dispositivo IoT?</p>
+<label><input type="radio" name="audio1" value="a"> Que tenga sensores, conexión y propósito</label><br>
+<label><input type="radio" name="audio1" value="b"> Que sea costoso</label><br>
+
+<p>2. ¿Por qué es importante la conectividad?</p>
+<label><input type="radio" name="audio2" value="a"> Porque permite comunicar datos entre dispositivos</label><br>
+<label><input type="radio" name="audio2" value="b"> Porque elimina todos los errores</label><br>
+
+<button onclick="validarAudio()">Calificar audio</button>
+<p id="resAudio"></p>
+</div>
+
 <h3>Infografía</h3>
 <iframe height="520" src="https://drive.google.com/file/d/1iPsy10SBzb0xUqLkjwJWnwFosEESFLyo/preview"></iframe>
 <a class="btn" target="_blank" href="https://drive.google.com/file/d/1iPsy10SBzb0xUqLkjwJWnwFosEESFLyo/view">Ver infografía</a>
+
+<div class="card">
+<h3>🖼️ Preguntas sobre la infografía</h3>
+<p>1. ¿Cuáles son vías de conectividad IoT?</p>
+<label><input type="radio" name="info1" value="a"> Wi-Fi, Bluetooth, redes celulares y fibra óptica</label><br>
+<label><input type="radio" name="info1" value="b"> Lápiz, papel y cuaderno</label><br>
+
+<p>2. ¿Qué capa permite al usuario visualizar y gestionar datos?</p>
+<label><input type="radio" name="info2" value="a"> Interfaz o aplicación</label><br>
+<label><input type="radio" name="info2" value="b"> Cable eléctrico únicamente</label><br>
+
+<button onclick="validarInfo()">Calificar infografía</button>
+<p id="resInfo"></p>
+</div>
 </section>
 
 <section id="guia" class="card">
@@ -97,15 +139,70 @@ button{background:var(--azul);color:white;border:0;border-radius:8px;padding:12p
 </section>
 
 <section id="quiz" class="card quiz">
-<h2>📝 Evaluación rápida</h2>
-<p>¿Qué elemento capta información del entorno en un sistema IoT?</p>
-<label><input type="radio" name="q1" value="a"> Sensor</label>
-<label><input type="radio" name="q1" value="b"> Mesa</label>
-<label><input type="radio" name="q1" value="c"> Papel</label>
-<button onclick="calificar()">Calificar</button>
+<h2>📝 Evaluación rápida ampliada</h2>
+
+<p>1. ¿Qué es Internet de las Cosas?</p>
+<label><input type="radio" name="q1" value="a"> Red de objetos físicos conectados que intercambian datos</label><br>
+<label><input type="radio" name="q1" value="b"> Solo páginas web conectadas</label><br>
+
+<p>2. ¿Qué componente capta información del entorno?</p>
+<label><input type="radio" name="q2" value="a"> Sensor</label><br>
+<label><input type="radio" name="q2" value="b"> Actuador</label><br>
+
+<p>3. ¿Qué hace un actuador?</p>
+<label><input type="radio" name="q3" value="a"> Ejecuta acciones físicas según una orden</label><br>
+<label><input type="radio" name="q3" value="b"> Solo almacena datos</label><br>
+
+<p>4. ¿Cuál es un ejemplo de IoT?</p>
+<label><input type="radio" name="q4" value="a"> Sistema de riego automático con sensores</label><br>
+<label><input type="radio" name="q4" value="b"> Libro impreso</label><br>
+
+<p>5. ¿Qué riesgo debe cuidarse en IoT?</p>
+<label><input type="radio" name="q5" value="a"> Privacidad y seguridad de los datos</label><br>
+<label><input type="radio" name="q5" value="b"> El color del dispositivo</label><br>
+
+<p>6. ¿Qué permite la conectividad?</p>
+<label><input type="radio" name="q6" value="a"> Comunicación entre dispositivos</label><br>
+<label><input type="radio" name="q6" value="b"> Desconectar sensores</label><br>
+
+<p>7. ¿Dónde suelen procesarse muchos datos IoT?</p>
+<label><input type="radio" name="q7" value="a"> En aplicaciones o plataformas en la nube</label><br>
+<label><input type="radio" name="q7" value="b"> Solo en papel</label><br>
+
+<p>8. ¿Qué es telemetría?</p>
+<label><input type="radio" name="q8" value="a"> Datos enviados por un dispositivo hacia una plataforma</label><br>
+<label><input type="radio" name="q8" value="b"> Una orden para apagar el internet</label><br>
+
+<button onclick="calificarQuizFinal()">Calificar evaluación</button>
 <p id="resultado"></p>
 </section>
 
+<section id="actividades" class="card">
+<h2>🌐 Actividades interactivas externas</h2>
+<p>Explora estas actividades para reforzar el aprendizaje:</p>
+<ul>
+<li><a target="_blank" href="https://es.educaplay.com/recursos/12826528-test_internet_de_las_cosas_iot.html">Test interactivo sobre IoT - Educaplay</a></li>
+<li><a target="_blank" href="https://es.educaplay.com/recursos/9898956-internet_de_las_cosas.html">Juego de parejas sobre IoT - Educaplay</a></li>
+<li><a target="_blank" href="https://proyecto-descartes.org/iCartesiLibri/laboratorios/proyectos/Internet_de_las_Cosas/">Laboratorio IoT - Proyecto Descartes</a></li>
+<li><a target="_blank" href="https://www.eduteka.org/herramientas/plan-de-clase-internet-de-las-cosas">Plan de clase IoT - Eduteka</a></li>
+<li><a target="_blank" href="https://laboratorios.ua.es/es/talleres/iot-secundaria.html">Taller IoT para secundaria - Universidad de Alcalá</a></li>
+</ul>
+</section>
+
+<section id="referencias" class="card">
+<h2>📖 Referencias bibliográficas</h2>
+<ol>
+<li>La web de Edu. (s.f.). <em>Bloque 2 – Internet de las Cosas (IoT)</em>.</li>
+<li>Robótica 2 ESO. (s.f.). <em>Internet de las cosas (IoT)</em>.</li>
+<li>Educaplay. (s.f.). <em>Test: Internet de las cosas IoT</em>.</li>
+<li>Educaplay. (s.f.). <em>Juego de parejas – IoT</em>.</li>
+<li>Proyecto Descartes. (s.f.). <em>Introducción al IoT</em>.</li>
+<li>UNIR. (s.f.). <em>Internet de las cosas: definición, funcionamiento y ejemplos</em>.</li>
+<li>EdutekaLab. (s.f.). <em>Conectando el mundo: redes, internet e IoT</em>.</li>
+<li>Universidad de Alcalá. (s.f.). <em>Internet de las Cosas (IoT)</em>.</li>
+<li>RealVNC. (s.f.). <em>La tecnología IoT en la educación</em>.</li>
+</ol>
+</section>
 <section class="card">
 <h2>🤖 Uso responsable de IA</h2>
 <p>El material fue revisado y adaptado pedagógicamente antes de su publicación.</p>
@@ -119,12 +216,41 @@ button{background:var(--azul);color:white;border:0;border-radius:8px;padding:12p
 </div>
 
 <script>
-function respuesta(ok){
-document.getElementById("feedback").innerText = ok ? "✅ Correcto: puede ser IoT." : "❌ No corresponde a IoT si no tiene sensores ni conectividad.";
+function revisar(nombre, correctas){
+  let puntos = 0;
+  correctas.forEach((c,i)=>{
+    const r = document.querySelector(`input[name="${nombre}${i+1}"]:checked`);
+    if(r && r.value === c) puntos++;
+  });
+  return puntos;
 }
-function calificar(){
-const r=document.querySelector('input[name="q1"]:checked');
-document.getElementById("resultado").innerText = r && r.value==="a" ? "✅ Correcto." : "❌ Revisa el concepto de sensor.";
+
+function validarVideo(){
+  const puntos = revisar("video", ["a","a"]);
+  document.getElementById("resVideo").innerText = `Resultado video: ${puntos}/2`;
+}
+
+function validarAudio(){
+  const puntos = revisar("audio", ["a","a"]);
+  document.getElementById("resAudio").innerText = `Resultado audio: ${puntos}/2`;
+}
+
+function validarInfo(){
+  const puntos = revisar("info", ["a","a"]);
+  document.getElementById("resInfo").innerText = `Resultado infografía: ${puntos}/2`;
+}
+
+function calificarQuizFinal(){
+  const correctas = ["a","a","a","a","a","a","a","a"];
+  let puntos = 0;
+
+  correctas.forEach((c,i)=>{
+    const r = document.querySelector(`input[name="q${i+1}"]:checked`);
+    if(r && r.value === c) puntos++;
+  });
+
+  document.getElementById("resultado").innerText =
+    `Obtuviste ${puntos} de ${correctas.length} respuestas correctas.`;
 }
 </script>
 
