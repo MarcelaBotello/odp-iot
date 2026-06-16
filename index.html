@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ODP IoT - Plataforma Educativa</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<style>
+:root{--azul:#1a5276;--claro:#eaf2f8;--gris:#f4f6f7;--texto:#2c3e50;}
+*{box-sizing:border-box} body{margin:0;font-family:Arial,sans-serif;background:var(--gris);color:var(--texto)}
+.layout{display:grid;grid-template-columns:260px 1fr;min-height:100vh}
+aside{background:#102f45;color:white;padding:24px;position:sticky;top:0;height:100vh}
+aside h2{font-size:1.2rem} aside a{display:block;color:white;text-decoration:none;margin:14px 0;padding:10px;border-radius:8px}
+aside a:hover{background:#1a5276}
+main{padding:32px;max-width:1200px}
+.hero{background:linear-gradient(135deg,#1a5276,#2980b9);color:white;padding:36px;border-radius:18px;margin-bottom:24px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px}
+.card{background:white;border-radius:16px;padding:22px;margin-bottom:22px;box-shadow:0 6px 20px rgba(0,0,0,.06)}
+h1,h2,h3{margin-top:0} h2{color:var(--azul)}
+iframe{width:100%;border:0;border-radius:12px;background:#eee}
+.btn{display:inline-block;background:var(--azul);color:white;padding:10px 16px;border-radius:8px;text-decoration:none;margin-top:10px}
+.quiz label{display:block;background:var(--claro);padding:10px;margin:8px 0;border-radius:8px}
+button{background:var(--azul);color:white;border:0;border-radius:8px;padding:12px 18px;font-weight:bold;cursor:pointer}
+@media(max-width:800px){.layout{grid-template-columns:1fr}aside{height:auto;position:relative}}
+</style>
+</head>
+<body>
+
+<div class="layout">
+<aside>
+<h2>🌐 ODP IoT</h2>
+<p>Grado décimo<br>Tecnología e Informática</p>
+<a href="#inicio">Inicio</a>
+<a href="#actividad">Actividad inicial</a>
+<a href="#contenido">Contenido</a>
+<a href="#recursos">Recursos</a>
+<a href="#guia">Guía</a>
+<a href="#resumen">Resumen</a>
+<a href="#quiz">Evaluación</a>
+<a href="#referencias">Referencias</a>
+</aside>
+
+<main>
+<section id="inicio" class="hero">
+<h1>El Universo del IoT: Conectividad y Ecosistema</h1>
+<p>Explora cómo los objetos cotidianos capturan datos, se conectan a internet y toman decisiones inteligentes.</p>
+</section>
+
+<section id="actividad" class="card">
+<h2>🔍 Actividad inicial</h2>
+<p>Selecciona cuáles objetos podrían pertenecer al Internet de las Cosas.</p>
+<div class="grid">
+<button onclick="respuesta(true)">⌚ Reloj inteligente</button>
+<button onclick="respuesta(false)">☕ Taza común</button>
+<button onclick="respuesta(true)">🌡️ Termostato inteligente</button>
+<button onclick="respuesta(false)">🪑 Silla de madera</button>
+</div>
+<p id="feedback"></p>
+</section>
+
+<section id="contenido" class="card">
+<h2>📚 Contenido por niveles</h2>
+<div class="grid">
+<div><h3>Básico</h3><p>IoT conecta objetos físicos con internet para enviar o recibir datos.</p></div>
+<div><h3>Medio</h3><p>Un sistema IoT integra sensores, red de comunicación, procesamiento y aplicación.</p></div>
+<div><h3>Avanzado</h3><p>Incluye telemetría, comandos, protocolos, nube, gateways y ciberseguridad.</p></div>
+<div><h3>Titán</h3><p>Analiza latencia, consumo energético, gobernanza de datos y resiliencia.</p></div>
+</div>
+</section>
+
+<section id="recursos" class="card">
+<h2>🎥 Recursos multimedia</h2>
+
+<h3>Video: Evolución</h3>
+<iframe height="420" src="https://drive.google.com/file/d/1ZVG5tL2iFzXXoezd3HwYvebDkS2M8fVo/preview" allow="autoplay"></iframe>
+<a class="btn" target="_blank" href="https://drive.google.com/file/d/1ZVG5tL2iFzXXoezd3HwYvebDkS2M8fVo/view">Abrir video</a>
+
+<h3>Podcast: El Internet de las Cosas</h3>
+<iframe height="120" src="https://drive.google.com/file/d/1-ktAZYlqvzeljKjGpW8uH89qgmRVLhsD/preview" allow="autoplay"></iframe>
+<a class="btn" target="_blank" href="https://drive.google.com/file/d/1-ktAZYlqvzeljKjGpW8uH89qgmRVLhsD/view">Abrir podcast</a>
+
+<h3>Infografía</h3>
+<iframe height="520" src="https://drive.google.com/file/d/1iPsy10SBzb0xUqLkjwJWnwFosEESFLyo/preview"></iframe>
+<a class="btn" target="_blank" href="https://drive.google.com/file/d/1iPsy10SBzb0xUqLkjwJWnwFosEESFLyo/view">Ver infografía</a>
+</section>
+
+<section id="guia" class="card">
+<h2>📘 Guía completa para el estudiante</h2>
+<iframe height="560" src="https://drive.google.com/file/d/1TVS_HHnYahOwq63Ocj8i3Be9ttTn9vd1/preview"></iframe>
+<a class="btn" target="_blank" href="https://drive.google.com/file/d/1TVS_HHnYahOwq63Ocj8i3Be9ttTn9vd1/view">Abrir guía</a>
+</section>
+
+<section id="resumen" class="card">
+<h2>📄 Resumen</h2>
+<iframe height="560" src="https://drive.google.com/file/d/1Rh9DS25V1lNvrG1eb9l16Y9qB_ysq6_z/preview"></iframe>
+<a class="btn" target="_blank" href="https://drive.google.com/file/d/1Rh9DS25V1lNvrG1eb9l16Y9qB_ysq6_z/view">Abrir resumen</a>
+</section>
+
+<section id="quiz" class="card quiz">
+<h2>📝 Evaluación rápida</h2>
+<p>¿Qué elemento capta información del entorno en un sistema IoT?</p>
+<label><input type="radio" name="q1" value="a"> Sensor</label>
+<label><input type="radio" name="q1" value="b"> Mesa</label>
+<label><input type="radio" name="q1" value="c"> Papel</label>
+<button onclick="calificar()">Calificar</button>
+<p id="resultado"></p>
+</section>
+
+<section class="card">
+<h2>🤖 Uso responsable de IA</h2>
+<p>El material fue revisado y adaptado pedagógicamente antes de su publicación.</p>
+</section>
+
+<section id="referencias" class="card">
+<h2>📖 Referencias</h2>
+<p>Incluye tus fuentes APA 7 aquí.</p>
+</section>
+</main>
+</div>
+
+<script>
+function respuesta(ok){
+document.getElementById("feedback").innerText = ok ? "✅ Correcto: puede ser IoT." : "❌ No corresponde a IoT si no tiene sensores ni conectividad.";
+}
+function calificar(){
+const r=document.querySelector('input[name="q1"]:checked');
+document.getElementById("resultado").innerText = r && r.value==="a" ? "✅ Correcto." : "❌ Revisa el concepto de sensor.";
+}
+</script>
+
+</body>
+</html>
